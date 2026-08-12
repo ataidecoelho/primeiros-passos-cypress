@@ -3,8 +3,11 @@ import LoginPage from '../pages/loginPage.js'
 import DashboardPage from '../pages/dashboardPage.js'
 import MenuPage from '../pages/menuPage.js'
 import MyInfoPage from '../pages/myInfoPage.js'
+import { min } from 'lodash'
 
+const Chance = require('chance')
 
+const chance = new Chance()
 const loginPage = new LoginPage()
 const dashboardPage = new DashboardPage()
 const menuPage = new MenuPage()
@@ -18,8 +21,8 @@ describe('Orange HRM - Tests', () => {
     loginPage.loginWithAnyUser(userData.userSuccess.username, userData.userSuccess.password)
     dashboardPage.checkDashboardPage()
     menuPage.accessMyInfo()
-    myInfoPage.fillPersonalDetails('Maria', 'Florentina', 'de Jesus')
-    myInfoPage.fillEmployeeDetails('1010', '2020', '3030', '2026-08-10')
+    myInfoPage.fillPersonalDetails(chance.first(), chance.last(), chance.last())
+    myInfoPage.fillEmployeeDetails(chance.prime(), chance.prime(), chance.prime(), '2026-08-11')
     myInfoPage.fillStatus()
     myInfoPage.saveForm()  
     })

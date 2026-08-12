@@ -6,7 +6,7 @@ class MyInfoPage {
             lastNameField: '[name="lastName"]',            
             genericField: ".oxd-input",
             genericComboBox: ".oxd-select-text-input",
-            secondItemComboBox: ".oxd-select-dropdown > :nth-child(27)",
+            secondItemComboBox: ".oxd-select-dropdown > :nth-child(4)",
             thirdItemComboBox: ".oxd-select-dropdown > :nth-child(3)",
             dateCloseButton: ".--close",
             submitButton: "[type='submit']"
